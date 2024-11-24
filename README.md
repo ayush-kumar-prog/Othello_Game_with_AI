@@ -1,35 +1,19 @@
-# COMP24011 2024 Lab1
+To compile and run this game you can use the following commands:
+$ javac *.java 
+$ java Othello
+In addition to the game board, the main window also shows
+• on the top left, the player agents that control the white and black pieces
+• on the top right, the current board score
+i.e. the difference between the number of white and black pieces
+• on the bottom left, a message indicating who’s turn it is and how to proceed with the game
 
-This is the repo for COMP24011 labs in the academic session 2024-25.
+Note that the board score value will be positive when White is winning and negative when Black is winning. By default the Java program allows a human player (always Black) to play against a computer agent that moves randomly (always White). You can change the code in Othello.java to configure these game settings.
 
-This branch holds the materials for the `lab1` assignment.
-You can always return to this branch with the command
-```
-git checkout lab1
-```
+The graphical interface of the Java reversi game is not very responsive and a bit basic, to put it mildly. For example:
+• The human agent waits for the user to click on a square and then makes that move. There is a 2 seconds delay before non-human agents can move, but the user can also click to request the agent to move.
+• Clicking on squares which do not represent legal moves just produces an irritating beep.
+• If it is the turn of the human player and there is no legal move, then the user must click anywhere in the green area outside the grid of the board, to generate a skip move and allow play to pass to the other player.
+• The interaction between mouse click events from the user and timer delay events that trigger non-human agents is not perfect. . . It’s better not to click while the computer is ‘thinking’
+• If you want to play another game, you need to close the window and re-run the program.
 
-There is a Unix shell refresh script to fetch the lab materials when they become available.
-You **need to** run this script before you start working on the assignment.
-This can be done with the command
-```
-./refresh.sh
-```
 
-To submit your work you **must** follow the COMP24011 submission guidelines in the [Laboratory Exercises](https://online.manchester.ac.uk/webapps/blackboard/content/listContentEditable.jsp?content_id=_15828703_1&course_id=_81433_1) Blackboard page.
-The lab manual details which files make up the solution of this exercise which you **have to** commit, tag for submission as `lab1_sol`, and then push both the commit and tag to your repo.
-This usually involves the following sequence of commands
-```
-git add -A .
-git commit
-git tag lab1_sol
-git push origin
-git push --tags origin
-```
-
-There are instructions on coursework submission via GitLab in Appendix L of the [CS UG Handbook](https://online.manchester.ac.uk/bbcswebdav/pid-16350838-dt-content-rid-185496744_1/xid-185496744_1).
-These include examples of how to amend your submission and fix the submission tag if you make a mistake before the deadline.
-You **must not** try to make changes to the submission tag after your deadline has closed as this may constitute academic malpractice.
-
-Please ask for support in the lab sessions if you're unsure about any lab instructions or submission.
-
-[modeline]: # ( vim:set spell spl=en: )
